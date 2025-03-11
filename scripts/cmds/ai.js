@@ -16,7 +16,7 @@ module.exports = {
       const prompt = event.body?.replace(/^ai/i, '').trim();
         if(!prompt) return message.reply("No prompt provided")
 
-       const {data} = await axios.get("api/gpt-3.5-turbo?", {params: {
+       const {data} = await axios.get("https://daiki.gleeze.com/api/gpt-3.5-turbo?prompt=what is love &uid=123&websearch=on", {params: {
         prompt,
         uid: event.senderID
       }})
